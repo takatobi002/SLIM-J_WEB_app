@@ -13,10 +13,44 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleComplete = (totalScore) => {
+  const sendToSpreadsheet = async (score, answers, activity) => {
+    // GASのWebアプリURL（デプロイ後にここを書き換えます）
+    const SPREADSHEET_URL = import.meta.env.VITE_GAS_URL || '';
+
+    if (!SPREADSHEET_URL) {
+      console.warn('Spreadsheet URL is not set');
+      return;
+    }
+
+    try {
+      const payload = {
+        timestamp: new Date().toISOString(),
+        activity: activity,
+        totalScore: score,
+        ...answers
+      };
+
+      await fetch(SPREADSHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors', // GASの場合はno-corsが必要な場合が多い
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+      console.log('Data sent successfully');
+    } catch (error) {
+      console.error('Error sending data:', error);
+    }
+  };
+
+  const handleComplete = (totalScore, answers) => {
     setScore(totalScore);
     setCurrentView('result');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // スプレッドシートへ送信
+    sendToSpreadsheet(totalScore, answers, activityName);
   };
 
   const handleReset = () => {

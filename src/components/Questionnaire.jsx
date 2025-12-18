@@ -27,7 +27,7 @@ const Questionnaire = ({ onComplete, activityName }) => {
 
   const handleSubmit = () => {
     const score = calculateScore();
-    onComplete(score);
+    onComplete(score, answers);
   };
 
   const formatQuestion = (text) => {
