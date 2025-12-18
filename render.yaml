@@ -1,9 +1,9 @@
 services:
-  - type: static
+  - type: web
     name: slim-j-web-app
     env: static
     buildCommand: npm install && npm run build
-    publishPath: ./dist
+    staticPublishPath: ./dist
     routes:
       - type: rewrite
         source: /*
