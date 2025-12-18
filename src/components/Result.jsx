@@ -42,6 +42,8 @@ const Result = ({ score, onReset }) => {
             <p style={{ textAlign: 'center', marginBottom: '2rem', color: 'var(--text-secondary)' }}>
                 上のグラフは、一般的な母集団と比較したあなたの位置を示しています。
                 ピンク色の棒があなたのスコア範囲を表しています。
+                <br />
+                <span style={{ fontSize: '0.8rem', opacity: 0.8 }}>※この分布はイメージです。</span>
             </p>
 
             <button className="btn-primary" onClick={onReset}>
