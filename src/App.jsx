@@ -32,9 +32,9 @@ function App() {
 
       await fetch(SPREADSHEET_URL, {
         method: 'POST',
-        mode: 'no-cors', // GASの場合はno-corsが必要な場合が多い
+        mode: 'no-cors',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'text/plain',
         },
         body: JSON.stringify(payload),
       });
