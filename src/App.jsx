@@ -62,7 +62,7 @@ function App() {
   return (
     <div className="container">
       <header style={{ marginBottom: '3rem', marginTop: '2rem' }}>
-        <h1>パーソナリティ尺度 (SLIM-J) {activityName && `(${activityName})`}</h1>
+        <h1>日本語版シリアスレジャー測定尺度 (SLIM-J) {activityName && `(${activityName})`}</h1>
       </header>
 
       <main>
