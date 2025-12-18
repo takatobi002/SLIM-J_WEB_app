@@ -61,6 +61,20 @@ function App() {
                 質問票を開始
               </button>
             </form>
+            <p style={{
+              marginTop: '2rem',
+              fontSize: '0.8rem',
+              color: 'var(--text-secondary)',
+              borderTop: '1px solid var(--glass-border)',
+              paddingTop: '1rem',
+              textAlign: 'left'
+            }}>
+              <strong>出典:</strong><br />
+              阿部 太一, 森田 泰暢, 矢野 航平 (2025). 言語的妥当性のある日本語版シリアスレジャー測定尺度の翻訳. Jxiv. <br />
+              <a href="https://jxiv.jst.go.jp/index.php/jxiv/preprint/view/1176" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-color)' }}>
+                https://jxiv.jst.go.jp/index.php/jxiv/preprint/view/1176
+              </a>
+            </p>
           </div>
         )}
 
